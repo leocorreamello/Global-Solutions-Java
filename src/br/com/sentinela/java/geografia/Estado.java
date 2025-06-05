@@ -29,9 +29,7 @@ public class Estado extends UnidadeGeografica {
      */
     @Override
     public String gerarResumo() {
-        return "ID: " + getId() + " | Nome: " + getNome() +
-                " | Risco atual: " + getNivelRiscoAtual() +
-                " | Sigla: " + sigla;
+        return "ID: " + getId() + " | Nome: " + getNome() + " | Risco atual: " + getNivelRiscoAtual() + " | Sigla: " + sigla;
     }
 
     /**
@@ -39,7 +37,6 @@ public class Estado extends UnidadeGeografica {
      * Exibe uma mensagem no console com o nome e ID do estado.
      */
     public void distribuirRecursosEmergenciais() {
-        System.out.println("Recursos emergenciais distribuídos no estado: " +
-                getNome() + " (ID: " + getId() + ")");
+        System.out.println("Recursos emergenciais distribuídos no estado: " + getNome() + " (ID: " + getId() + ")");
     }
 }

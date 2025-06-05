@@ -34,9 +34,7 @@ public class Cidade extends UnidadeGeografica {
      */
     @Override
     public String gerarResumo() {
-        return "ID: " + getId() + " | Nome: " + getNome() +
-                " | Risco atual: " + getNivelRiscoAtual() +
-                " | Sigla: " + sigla;
+        return "ID: " + getId() + " | Nome: " + getNome() + " | Risco atual: " + getNivelRiscoAtual() + " | Sigla: " + sigla;
     }
 
     /**
@@ -44,7 +42,6 @@ public class Cidade extends UnidadeGeografica {
      * Exibe uma mensagem no console com o nome e ID da cidade.
      */
     public void acionarAutoridadesMunicipais() {
-        System.out.println("Autoridades municipais acionadas para cidade: " +
-                getNome() + " (ID: " + getId() + ")");
+        System.out.println("Autoridades municipais acionadas para cidade: " + getNome() + " (ID: " + getId() + ")");
     }
 }

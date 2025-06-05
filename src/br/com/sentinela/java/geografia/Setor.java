@@ -41,10 +41,7 @@ public class Setor extends UnidadeGeografica {
      */
     @Override
     public String gerarResumo() {
-        return "ID: " + getId() + " | Nome: " + getNome() +
-                " | Risco atual: " + getNivelRiscoAtual() +
-                " | Densidade Demográfica: " + densidadeDemografica +
-                " | Observações: " + observacoes;
+        return "ID: " + getId() + " | Nome: " + getNome() + " | Risco atual: " + getNivelRiscoAtual() + " | Densidade Demográfica: " + densidadeDemografica + " | Observações: " + observacoes;
     }
 
     /**
@@ -62,8 +59,6 @@ public class Setor extends UnidadeGeografica {
      * @param regiao Objeto região onde o setor está inserido.
      */
     public void estimarPopulacao(Setor setor, Regiao regiao) {
-        System.out.println("Estimativa de população no setor: " +
-                getAreaTotal() * densidadeDemografica + " habitantes. (" +
-                setor.getNome() + " em " + regiao.getNome() + ")");
+        System.out.println("Estimativa de população no setor: " + getAreaTotal() * densidadeDemografica + " habitantes. (" + setor.getNome() + " em " + regiao.getNome() + ")");
     }
 }
