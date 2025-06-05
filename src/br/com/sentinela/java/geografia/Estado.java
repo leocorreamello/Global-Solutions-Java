@@ -11,7 +11,7 @@ public class Estado extends UnidadeGeografica {
     /**
      * Construtor da classe Estado.
      *
-     * @param id        ID único da unidade geográfica.
+     * @param id        ID unico da unidade geográfica.
      * @param nome      Nome do estado.
      * @param descricao Descrição do estado.
      * @param areaTotal Área total do estado em km².
