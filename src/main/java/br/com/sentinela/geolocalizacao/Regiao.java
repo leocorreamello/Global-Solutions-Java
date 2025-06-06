@@ -1,23 +1,45 @@
 package main.java.br.com.sentinela.geolocalizacao;
 
+import main.java.br.com.sentinela.utils.CoberturaAtiva;
+
 public class Regiao extends UnidadeGeografica {
     private Cidade idCidade;
 
     //Getters & Setters
-    public int getIdCidade() {return idCidade.getId();}
+    public int getIdCidade() {return idCidade.getIdUnidadeGeografica();}
 
-    //Métodos
     /**
-     * Construtor da classe Regiao.
+     * Construtor da classe Regiao com os dados obrigatórios.
      *
-     * @param id         Identificador único da região.
-     * @param nome       Nome da região.
-     * @param descricao  Descrição da região.
-     * @param areaTotal  Área total da região em km².
-     * @param idCidade   Objeto Cidade ao qual a região pertence.
+     * @param idUnidadeGeografica Identificador da unidade geográfica.
+     * @param nome Nome da região.
+     * @param nivelRiscoAtual Nível de risco atual da região.
+     * @param mediaRisco Média de risco da região.
+     * @param areaTotal Área total da região em km².
+     * @param areaTotalMapeada Área total mapeada da região em km².
+     * @param coberturaAtiva Cobertura ativa na região.
+     * @param idCidade Cidade associada à região.
      */
-    public Regiao(int id, String nome, String descricao, double areaTotal, Cidade idCidade) {
-        super(id, nome, descricao, areaTotal);
+    public Regiao(int idUnidadeGeografica, String nome, double nivelRiscoAtual, double mediaRisco, double areaTotal, double areaTotalMapeada, CoberturaAtiva coberturaAtiva, Cidade idCidade) {
+        super(idUnidadeGeografica, nome, nivelRiscoAtual, mediaRisco, areaTotal, areaTotalMapeada, coberturaAtiva);
+        this.idCidade = idCidade;
+    }
+
+    /**
+     * Construtor da classe Regiao com todos os dados.
+     *
+     * @param idUnidadeGeografica Identificador da unidade geográfica.
+     * @param nome Nome da região.
+     * @param descricao Descrição da região.
+     * @param nivelRiscoAtual Nível de risco atual da região.
+     * @param mediaRisco Média de risco da região.
+     * @param areaTotal Área total da região em km².
+     * @param areaTotalMapeada Área total mapeada da região em km².
+     * @param coberturaAtiva Cobertura ativa na região.
+     * @param idCidade Cidade associada à região.
+     */
+    public Regiao(int idUnidadeGeografica, String nome, String descricao, double nivelRiscoAtual, double mediaRisco, double areaTotal, double areaTotalMapeada, CoberturaAtiva coberturaAtiva, Cidade idCidade) {
+        super(idUnidadeGeografica, nome, descricao, nivelRiscoAtual, mediaRisco, areaTotal, areaTotalMapeada, coberturaAtiva);
         this.idCidade = idCidade;
     }
 
@@ -28,7 +50,7 @@ public class Regiao extends UnidadeGeografica {
      */
     @Override
     public String gerarResumo() {
-        return "ID: " + getId() + " | Nome: " + getNome() + " | Risco atual: " + getNivelRiscoAtual();
+        return "ID: " + getIdUnidadeGeografica() + " | Nome: " + getNome() + " | Risco atual: " + getNivelRiscoAtual();
     }
 
     /**
@@ -36,6 +58,6 @@ public class Regiao extends UnidadeGeografica {
      * Exibe uma mensagem com nome e ID da região.
      */
     public void priorizarMapeamento() {
-        System.out.println("Priorizando mapeamento na região: " + getNome() + " (ID: " + getId() + ")");
+        System.out.println("Priorizando mapeamento na região: " + getNome() + " (ID: " + getIdUnidadeGeografica() + ")");
     }
 }

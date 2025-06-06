@@ -1,28 +1,47 @@
 package main.java.br.com.sentinela.geolocalizacao;
 
+import main.java.br.com.sentinela.utils.CoberturaAtiva;
+
 public class Cidade extends UnidadeGeografica {
     private Estado idEstado;
     private String sigla;
 
-    //Getters & Setters
-    public int getEstado() {return idEstado.getId();}
+    public int getEstado() {return idEstado.getIdUnidadeGeografica();}
 
     public String getSigla() {return sigla;}
     public void setSigla(String sigla) {this.sigla = sigla;}
 
-    //Métodos
     /**
-     * Construtor da classe Cidade.
-     *
-     * @param id         Identificador único da cidade.
-     * @param nome       Nome da cidade.
-     * @param descricao  Descrição da cidade.
-     * @param areaTotal  Área total da cidade em km².
-     * @param idEstado   Objeto Estado ao qual a cidade pertence.
-     * @param sigla      Sigla oficial da cidade (opcional).
+     * Construtor da classe Cidade com todos os atributos obrigatórios
+     * @param idUnidadeGeografica
+     * @param nome
+     * @param nivelRiscoAtual
+     * @param mediaRisco
+     * @param areaTotal
+     * @param areaTotalMapeada
+     * @param coberturaAtiva
+     * @param idEstado
      */
-    public Cidade(int id, String nome, String descricao, double areaTotal, Estado idEstado, String sigla) {
-        super(id, nome, descricao, areaTotal);
+    public Cidade(int idUnidadeGeografica, String nome, double nivelRiscoAtual, double mediaRisco, double areaTotal, double areaTotalMapeada, CoberturaAtiva coberturaAtiva, Estado idEstado) {
+        super(idUnidadeGeografica, nome, nivelRiscoAtual, mediaRisco, areaTotal, areaTotalMapeada, coberturaAtiva);
+        this.idEstado = idEstado;
+    }
+
+    /**
+     * Construtor da classe Cidade com todos os atributos
+     * @param idUnidadeGeografica
+     * @param nome
+     * @param descricao
+     * @param nivelRiscoAtual
+     * @param mediaRisco
+     * @param areaTotal
+     * @param areaTotalMapeada
+     * @param coberturaAtiva
+     * @param idEstado
+     * @param sigla
+     */
+    public Cidade(int idUnidadeGeografica, String nome, String descricao, double nivelRiscoAtual, double mediaRisco, double areaTotal, double areaTotalMapeada, CoberturaAtiva coberturaAtiva, Estado idEstado, String sigla) {
+        super(idUnidadeGeografica, nome, descricao, nivelRiscoAtual, mediaRisco, areaTotal, areaTotalMapeada, coberturaAtiva);
         this.idEstado = idEstado;
         this.sigla = sigla;
     }
@@ -34,7 +53,7 @@ public class Cidade extends UnidadeGeografica {
      */
     @Override
     public String gerarResumo() {
-        return "ID: " + getId() + " | Nome: " + getNome() + " | Risco atual: " + getNivelRiscoAtual() + " | Sigla: " + sigla;
+        return "ID: " + getIdUnidadeGeografica() + " | Nome: " + getNome() + " | Risco atual: " + getNivelRiscoAtual() + " | Sigla: " + sigla;
     }
 
     /**
@@ -42,6 +61,6 @@ public class Cidade extends UnidadeGeografica {
      * Exibe uma mensagem no console com o nome e ID da cidade.
      */
     public void acionarAutoridadesMunicipais() {
-        System.out.println("Autoridades municipais acionadas para cidade: " + getNome() + " (ID: " + getId() + ")");
+        System.out.println("Autoridades municipais acionadas para cidade: " + getNome() + " (ID: " + getIdUnidadeGeografica() + ")");
     }
 }
