@@ -1,7 +1,7 @@
 package main.java.br.com.sentinela.utils;
 
 public enum CoberturaAtiva {
-    NÃO,
+    NAO,
     PARCIALMENTE,
     SIM
 }

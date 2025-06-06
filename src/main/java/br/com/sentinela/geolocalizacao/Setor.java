@@ -1,12 +1,14 @@
 package main.java.br.com.sentinela.geolocalizacao;
 
+import main.java.br.com.sentinela.utils.CoberturaAtiva;
+
 public class Setor extends UnidadeGeografica {
     private Regiao idRegiao;
     private double densidadeDemografica;
     private String observacoes;
 
     //Getters & Setters
-    public int getRegiao() {return idRegiao.getId();}
+    public int getRegiao() {return idRegiao.getIdUnidadeGeografica();}
 
     public double getDensidadeDemografica() {return densidadeDemografica;}
     public void setDensidadeDemografica(double densidadeDemografica) {this.densidadeDemografica = densidadeDemografica;}
@@ -14,21 +16,38 @@ public class Setor extends UnidadeGeografica {
     public String getObservacoes() {return observacoes;}
     public void setObservacoes(String observacoes) {this.observacoes = observacoes;}
 
-    //Métodos
     /**
-     * Construtor da classe Setor.
+     * Construtor da classe Setor com os dados obrigatórios.
      *
-     * @param id                    Identificador do setor.
-     * @param nome                  Nome do setor.
-     * @param descricao             Descrição da unidade.
-     * @param areaTotal             Área total em km².
-     * @param idRegiao              Objeto Regiao ao qual o setor pertence.
-     * @param densidadeDemografica  Densidade populacional estimada por km².
-     * @param observacoes           Observações adicionais sobre o setor.
+     * @param idUnidadeGeografica Identificador da unidade geográfica.
+     * @param nome Nome do setor.
+     * @param nivelRiscoAtual Nível de risco atual do setor.
+     * @param mediaRisco Média de risco do setor.
+     * @param areaTotal Área total do setor em km².
+     * @param areaTotalMapeada Área total mapeada do setor em km².
+     * @param coberturaAtiva Cobertura ativa no setor.
+     * @param idRegiao Região associada ao setor.
      */
-    public Setor(int id, String nome, String descricao, double areaTotal, Regiao idRegiao,
-                 double densidadeDemografica, String observacoes) {
-        super(id, nome, descricao, areaTotal);
+    public Setor(int idUnidadeGeografica, String nome, double nivelRiscoAtual, double mediaRisco, double areaTotal, double areaTotalMapeada, CoberturaAtiva coberturaAtiva, Regiao idRegiao) {
+        super(idUnidadeGeografica, nome, nivelRiscoAtual, mediaRisco, areaTotal, areaTotalMapeada, coberturaAtiva);
+        this.idRegiao = idRegiao;
+    }
+
+    /**
+     * Construtor da classe Setor com todos os dados.
+     *
+     * @param idUnidadeGeografica Identificador da unidade geográfica.
+     * @param nome Nome do setor.
+     * @param descricao Descrição do setor.
+     * @param nivelRiscoAtual Nível de risco atual do setor.
+     * @param mediaRisco Média de risco do setor.
+     * @param areaTotal Área total do setor em km².
+     * @param areaTotalMapeada Área total mapeada do setor em km².
+     * @param coberturaAtiva Cobertura ativa no setor.
+     * @param idRegiao Região associada ao setor.
+     */
+    public Setor(int idUnidadeGeografica, String nome, String descricao, double nivelRiscoAtual, double mediaRisco, double areaTotal, double areaTotalMapeada, CoberturaAtiva coberturaAtiva, Regiao idRegiao, double densidadeDemografica, String observacoes) {
+        super(idUnidadeGeografica, nome, descricao, nivelRiscoAtual, mediaRisco, areaTotal, areaTotalMapeada, coberturaAtiva);
         this.idRegiao = idRegiao;
         this.densidadeDemografica = densidadeDemografica;
         this.observacoes = observacoes;
@@ -41,7 +60,7 @@ public class Setor extends UnidadeGeografica {
      */
     @Override
     public String gerarResumo() {
-        return "ID: " + getId() + " | Nome: " + getNome() + " | Risco atual: " + getNivelRiscoAtual() + " | Densidade Demográfica: " + densidadeDemografica + " | Observações: " + observacoes;
+        return "ID: " + getIdUnidadeGeografica() + " | Nome: " + getNome() + " | Risco atual: " + getNivelRiscoAtual() + " | Densidade Demográfica: " + densidadeDemografica + " | Observações: " + observacoes;
     }
 
     /**
@@ -49,7 +68,7 @@ public class Setor extends UnidadeGeografica {
      * Exibe o nome e ID do setor.
      */
     public void enviarAlertaImediato() {
-        System.out.println("ALERTA IMEDIATO emitido no setor: " + getNome() + " (ID: " + getId() + ")");
+        System.out.println("ALERTA IMEDIATO emitido no setor: " + getNome() + " (ID: " + getIdUnidadeGeografica() + ")");
     }
 
     /**

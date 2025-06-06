@@ -1,18 +1,19 @@
 package main.java.br.com.sentinela.geolocalizacao;
 
+import main.java.br.com.sentinela.utils.CoberturaAtiva;
+
 public class UnidadeGeografica {
-    private int id;
+    private int idUnidadeGeografica;
     private String nome;
     private String descricao;
     private double nivelRiscoAtual;
     private double mediaRisco;
     private double areaTotal;
     private double areaTotalMapeada;
-    private enum coberturaAtiva {}
+    private CoberturaAtiva coberturaAtiva;
 
-    //Getters & Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public int getIdUnidadeGeografica() { return idUnidadeGeografica; }
+    public void setIdUnidadeGeografica(int idUnidadeGeografica) { this.idUnidadeGeografica = idUnidadeGeografica; }
 
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
@@ -32,23 +33,46 @@ public class UnidadeGeografica {
     public double getAreaTotalMapeada() { return areaTotalMapeada; }
     public void setAreaTotalMapeada(double areaTotalMapeada) { this.areaTotalMapeada = areaTotalMapeada; }
 
-    //Métodos
     /**
-     * Construtor da unidade geográfica com os dados principais.
-     *
-     * @param id        Identificador da unidade.
-     * @param nome      Nome da unidade.
-     * @param descricao Descrição da unidade.
-     * @param areaTotal Área total da unidade em km².
+     * Construtor da classe UnidadeGeografica com todos os atributos obrigatórios.
+     * @param idUnidadeGeografica
+     * @param nome
+     * @param nivelRiscoAtual
+     * @param mediaRisco
+     * @param areaTotal
+     * @param areaTotalMapeada
+     * @param coberturaAtiva
      */
-    public UnidadeGeografica(int id, String nome, String descricao, double areaTotal) {
-        this.id = id;
+    public UnidadeGeografica(int idUnidadeGeografica, String nome, double nivelRiscoAtual, double mediaRisco, double areaTotal, double areaTotalMapeada, CoberturaAtiva coberturaAtiva) {
+        this.idUnidadeGeografica = idUnidadeGeografica;
+        this.nome = nome;
+        this.nivelRiscoAtual = nivelRiscoAtual;
+        this.mediaRisco = mediaRisco;
+        this.areaTotal = areaTotal;
+        this.areaTotalMapeada = areaTotalMapeada;
+        this.coberturaAtiva = coberturaAtiva;
+    }
+
+    /**
+     * Construtor da classe UnidadeGeografica com todos os atributos.
+     * @param idUnidadeGeografica
+     * @param nome
+     * @param descricao
+     * @param nivelRiscoAtual
+     * @param mediaRisco
+     * @param areaTotal
+     * @param areaTotalMapeada
+     * @param coberturaAtiva
+     */
+    public UnidadeGeografica(int idUnidadeGeografica, String nome, String descricao, double nivelRiscoAtual, double mediaRisco, double areaTotal, double areaTotalMapeada, CoberturaAtiva coberturaAtiva) {
+        this.idUnidadeGeografica = idUnidadeGeografica;
         this.nome = nome;
         this.descricao = descricao;
+        this.nivelRiscoAtual = nivelRiscoAtual;
+        this.mediaRisco = mediaRisco;
         this.areaTotal = areaTotal;
-        this.areaTotalMapeada = 0.0;
-        this.nivelRiscoAtual = 0.0;
-        this.mediaRisco = 0.0;
+        this.areaTotalMapeada = areaTotalMapeada;
+        this.coberturaAtiva = coberturaAtiva;
     }
 
     /**
@@ -57,6 +81,6 @@ public class UnidadeGeografica {
      * @return String com informações resumidas da unidade.
      */
     public String gerarResumo() {
-        return "ID: " + id + " | Nome: " + nome + " | Risco atual: " + nivelRiscoAtual;
+        return "ID: " + idUnidadeGeografica + " | Nome: " + nome + " | Risco atual: " + nivelRiscoAtual;
     }
 }
