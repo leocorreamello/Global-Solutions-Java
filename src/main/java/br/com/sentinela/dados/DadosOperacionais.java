@@ -13,7 +13,9 @@ public class DadosOperacionais {
     public int getIdOperacional() {return idOperacional;}
     public void setIdOperacional(int idOperacional) {this.idOperacional = idOperacional;}
 
-    public int getIdSetor() {return idSetor.getId();}
+    public Setor getIdSetor() {
+        return idSetor;
+    }
 
     public LocalDate getDataRegistro() {return dataRegistro;}
     public void setDataRegistro(LocalDate dataRegistro) {this.dataRegistro = dataRegistro;}

@@ -1,13 +1,11 @@
 package main.java.br.com.sentinela.historico;
 
 import main.java.br.com.sentinela.geolocalizacao.Setor;
+import main.java.br.com.sentinela.utils.CoberturaAtiva;
 
 import java.time.LocalDate;
 
 public class HistoricoGeral extends Historico {
-    public enum CoberturaAtiva {
-        NAO, PARCIALMENTE, SIM
-    }
 
     private double areaTotalMapeada;
     private CoberturaAtiva coberturaAtiva;

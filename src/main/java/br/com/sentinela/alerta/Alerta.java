@@ -39,7 +39,9 @@ public class Alerta {
     public int getIdAlerta() {return idAlerta;}
     public void setIdAlerta(int idAlerta) {this.idAlerta = idAlerta;}
 
-    public int getIdSetor() {return idSetor.getId();}
+    public Setor getIdSetor() {
+        return idSetor;
+    }
 
     public String getTitulo() {return titulo;}
     public void setTitulo(String titulo) {this.titulo = titulo;}

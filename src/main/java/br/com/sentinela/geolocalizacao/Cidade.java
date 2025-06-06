@@ -47,13 +47,13 @@ public class Cidade extends UnidadeGeografica {
     }
 
     /**
-     * Gera um resumo da cidade com ID, nome, risco atual e sigla.
+     * Gera um resumo da cidade com tipo, nome, risco atual e sigla.
      *
      * @return Texto formatado com os principais dados da cidade.
      */
     @Override
     public String gerarResumo() {
-        return "ID: " + getIdUnidadeGeografica() + " | Nome: " + getNome() + " | Risco atual: " + getNivelRiscoAtual() + " | Sigla: " + sigla;
+        return super.gerarResumo() + " | Sigla: " + sigla;
     }
 
     /**

@@ -50,7 +50,7 @@ public class Estado extends UnidadeGeografica {
      */
     @Override
     public String gerarResumo() {
-        return "ID: " + getIdUnidadeGeografica() + " | Nome: " + getNome() + " | Risco atual: " + getNivelRiscoAtual() + " | Sigla: " + sigla;
+        return super.gerarResumo() + " | Sigla: " + sigla;
     }
 
     /**

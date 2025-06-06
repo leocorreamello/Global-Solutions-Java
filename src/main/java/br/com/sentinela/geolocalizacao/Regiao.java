@@ -44,13 +44,13 @@ public class Regiao extends UnidadeGeografica {
     }
 
     /**
-     * Gera um resumo da região com ID, nome e risco atual.
+     * Gera um resumo da região com nome e risco atual.
      *
      * @return Texto formatado com os principais dados da região.
      */
     @Override
     public String gerarResumo() {
-        return "ID: " + getIdUnidadeGeografica() + " | Nome: " + getNome() + " | Risco atual: " + getNivelRiscoAtual();
+        return super.gerarResumo();
     }
 
     /**

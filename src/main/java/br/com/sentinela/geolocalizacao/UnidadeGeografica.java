@@ -76,11 +76,13 @@ public class UnidadeGeografica {
     }
 
     /**
-     * Gera um resumo contendo ID, nome e risco atual da unidade.
+     * Gera um resumo contendo tipo, nome e risco atual da unidade.
      *
      * @return String com informações resumidas da unidade.
      */
     public String gerarResumo() {
-        return "ID: " + idUnidadeGeografica + " | Nome: " + nome + " | Risco atual: " + nivelRiscoAtual;
+        return  " | Tipo: " + getClass().getSimpleName() +
+                " | Nome: " + nome +
+                " | Risco atual: " + nivelRiscoAtual;
     }
 }

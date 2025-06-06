@@ -13,7 +13,9 @@ public class Historico {
     public int getIdHistorico() {return idHistorico;}
     public void setIdHistorico(int idHistorico) {this.idHistorico = idHistorico;}
 
-    public int getIdSetor() {return idSetor.getId();}
+    public Setor getIdSetor() {
+        return idSetor;
+    }
 
     public LocalDate getDataRegistro() {return dataRegistro;}
     public void setDataRegistro(LocalDate dataRegistro) {this.dataRegistro = dataRegistro;}

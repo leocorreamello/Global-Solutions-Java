@@ -56,11 +56,13 @@ public class Setor extends UnidadeGeografica {
     /**
      * Gera um resumo completo do setor, incluindo densidade e observações.
      *
-     * @return Texto formatado com ID, nome, risco e detalhes do setor.
+     * @return Texto formatado com nome, risco e detalhes do setor.
      */
     @Override
     public String gerarResumo() {
-        return "ID: " + getIdUnidadeGeografica() + " | Nome: " + getNome() + " | Risco atual: " + getNivelRiscoAtual() + " | Densidade Demográfica: " + densidadeDemografica + " | Observações: " + observacoes;
+        return super.gerarResumo() +
+               " | Densidade Demográfica: " + densidadeDemografica + " hab/km²" +
+               " | Observações: " + (observacoes != null ? observacoes : "Nenhuma observação registrada.");
     }
 
     /**
