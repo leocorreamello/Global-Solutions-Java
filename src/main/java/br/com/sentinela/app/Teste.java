@@ -1,4 +1,4 @@
-package main.java.br.com.sentinela.teste;
+package main.java.br.com.sentinela.app;
 
 import main.java.br.com.sentinela.alerta.Alerta;
 import main.java.br.com.sentinela.atores.Autoridade;
@@ -9,7 +9,6 @@ import main.java.br.com.sentinela.geolocalizacao.Setor;
 import main.java.br.com.sentinela.utils.CoberturaAtiva;
 
 import java.time.LocalDateTime;
-import java.util.*;
 
 public class Teste {
 
