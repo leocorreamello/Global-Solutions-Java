@@ -1,6 +1,6 @@
-package br.com.sentinela.java.teste;
+package main.java.br.com.sentinela.teste;
 
-import br.com.sentinela.java.geografia.*;
+import main.java.br.com.sentinela.geografia.*;
 
 public class Teste {
 

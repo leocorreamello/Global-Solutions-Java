@@ -1,4 +1,4 @@
-package br.com.sentinela.java.geografia;
+package main.java.br.com.sentinela.geografia;
 
 public class Setor extends UnidadeGeografica {
     private Regiao idRegiao;
