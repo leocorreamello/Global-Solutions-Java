@@ -14,20 +14,6 @@ public class Teste {
 
 
 
-        System.out.println(unidade.gerarResumo());
-        System.out.println(estado.gerarResumo());
-        System.out.println(cidade.gerarResumo());
-        System.out.println(regiao.gerarResumo());
-        System.out.println(setor.gerarResumo());
-
-        estado.distribuirRecursosEmergenciais();
-
-        cidade.acionarAutoridadesMunicipais();
-
-        regiao.priorizarMapeamento();
-
-        setor.enviarAlertaImediato();
-        setor.estimarPopulacao(setor, regiao);
     }
 
 }
